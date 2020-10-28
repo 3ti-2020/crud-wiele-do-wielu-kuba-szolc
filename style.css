@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    background-color: lightblue;
+    height: 5vh;
+    margin: 0;
+    padding: 30px;
+    text-align: center;
+}
+
+.tablecont{
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgreen;
+}
+
+table,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.forms{
+    background-color: lightgoldenrodyellow;
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form{
+    margin: 5px;
+}
+input{
+    padding: 5px;
+}
