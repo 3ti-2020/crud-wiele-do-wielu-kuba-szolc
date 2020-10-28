@@ -8,9 +8,9 @@
 <body>
     <table>
     <?php
-        $conn = new mysqli("localhost", "root", "zaq1@WSX", "library");
+        $conn = new mysqli("remotemysql.com:3306", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
 
-        $result = $conn->query("SELECT * FROM pozycje");
+        $result = $conn->query("SELECT * FROM autorzy, books, tytuly WHERE books.id_autor = autorzy.id_autor AND books.id_tytul = tytuly.id_tytul");
 
         while($row=$result->fetch_assoc()){
             echo("<tr><td>".$row['nazwisko']."</td><td>".$row['tytul']."</td></tr>");
