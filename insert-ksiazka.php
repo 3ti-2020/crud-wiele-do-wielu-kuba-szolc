@@ -1,5 +1,5 @@
 <?php
-        $conn = new mysqli("remotemysql.com:3306", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
+        $conn = new mysqli("remotemysql.com", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
 
         $nowa_ksiazka_autor = $_POST['autor'];
         $nowa_ksiazka_tytul = $_POST['ksiazka'];

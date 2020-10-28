@@ -8,7 +8,7 @@
 <body>
     <table>
     <?php
-        $conn = new mysqli("remotemysql.com:3306", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
+        $conn = new mysqli("remotemysql.com", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
 
         $result = $conn->query("SELECT * FROM autorzy, books, tytuly WHERE books.id_autor = autorzy.id_autor AND books.id_tytul = tytuly.id_tytul");
 
@@ -45,7 +45,7 @@
                 $result = $conn->query("SELECT * FROM tytuly");
 
                 while($row=$result->fetch_assoc()){
-                    echo("<option value='".$row['id_tytul']."'>".$row['tytul']."</option>");
+                    echo("<option value='".$row['id_tytul']."'> ".$row['tytul']."</option>");
                 }
             ?>
         </select>

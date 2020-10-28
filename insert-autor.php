@@ -1,5 +1,5 @@
 <?php
-        $conn = new mysqli("remotemysql.com:3306", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
+        $conn = new mysqli("remotemysql.com", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
 
         $nowe_imie = $_POST['imie'];
         $nowe_nazwisko = $_POST['nazwisko'];
