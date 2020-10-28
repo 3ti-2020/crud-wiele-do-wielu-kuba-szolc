@@ -11,8 +11,8 @@
     <div class="tablecont">
         <table>
         <?php
-            $conn = new mysqli("localhost", "root", "zaq1@WSX", "library");
-            // $conn = new mysqli("remotemysql.com", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
+            // $conn = new mysqli("localhost", "root", "zaq1@WSX", "library");
+            $conn = new mysqli("remotemysql.com", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
 
             $result = $conn->query("SELECT * FROM autorzy, books, tytuly WHERE books.id_autor = autorzy.id_autor AND books.id_tytul = tytuly.id_tytul");
 
