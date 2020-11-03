@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 3vw;
+}
+.card{
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 37px -13px rgba(0,0,0,1);
+}
+
+h1{
+    margin: 20px 0 0 20px;
+    font-weight: 900;
+}
+h3{
+    margin-left: 20px;
+    margin-bottom: 30px;
+    color: #aaaaaa;
+    font-size: smaller;
+    font-weight: 200;
+}
+
+.price{
+    display: flex;
+    align-items: flex-end;
+    margin: 20px;
+}
+.h2price::first-letter{
+    font-size: 0.9rem;
+}
+.h3price{
+    margin: 0;
+    margin-left: 15px;
+    text-decoration: line-through;
+}
+
+.image{
+   width: 300px;
+   height: 350px;
+   margin: 20px;
+}
+
+.cart{
+    width: 50px;
+    cursor: pointer;
+}
+.colors{
+    width: 45px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.icons{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 20px;
+    right: 20px;
+}
+.buyBefore{
+    display: none;
+}
+.buyAfter, .selectColorAfter{
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    height: 40%;
+    background-color: white;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    animation: wjazd 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes wjazd {
+    100% {transform: translateY(-100%);} 
+}
+
+.addToCart{
+    font-size: 1em;
+    color: white;
+    background-color: #e63c3c;
+    border: none;
+    padding: 20px;
+    border-radius: 40px;
+}
+
+.selectColorBefore{
+    display: none;
+}
+
+.color{
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+}
+.colorRed{
+    background-color: #e63c3c;
+}
+.colorYel{
+    background-color: yellow;
+}
+.colorGre{
+    background-color: green;
+}
+
+.black{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    opacity: 0;
+}
+h4{
+    width: 100%;
+    text-align: center;
+}
+
+i{
+    color: white;
+}
+
+p{
+    width: 100%;
+    text-align: center;
+    margin-top: 8vh;
+    margin-bottom: 2vh;
+    font-size: xx-large;
+    font-weight: 1000;
+}
