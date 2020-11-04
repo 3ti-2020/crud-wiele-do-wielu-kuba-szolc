@@ -1,0 +1,95 @@
+*{
+    font-family: 'Lato', sans-serif;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: whitesmoke;
+    width: 100vw;
+}
+
+.header{
+    background-color: lightgreen;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+}
+.githublink{
+    position: absolute;
+    left: 30px;
+}
+.githubimg{
+    height: 70px;
+}
+.imie{
+    height: 5vh;
+    margin: 0;
+    text-align: center;
+}
+.menu{
+    display: flex;
+    list-style-type: none;
+    position: absolute;
+    right: 30px;
+}
+.mlink a{
+    background-color: lightgray;
+    color: black;
+    text-decoration: none;
+    padding: 20px;
+    margin: 5px;
+}
+.mlink a:hover{
+    background-color: white;
+}
+
+
+.main{
+    height: 85vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.images{
+    background-color: white;
+    height: 70vh;
+    width: 70vw;
+    background-image: url('img1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 0px 37px -13px rgba(0,0,0,1);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn{
+    height: 100%;
+    width: 20%;
+    opacity: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+.btn:hover{
+    border: 0;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.btn:focus{
+    outline: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.fa{
+    font-size: 50px;
+    color: white;
+    text-shadow: 0px 0px 15px black;
+}
