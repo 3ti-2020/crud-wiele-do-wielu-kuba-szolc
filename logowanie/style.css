@@ -1,0 +1,73 @@
+*{
+    font-family: 'Lato', sans-serif;
+}
+body{
+    margin: 0;
+}
+
+.header{
+    background-color: lightgreen;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.githublink{
+    position: absolute;
+    left: 30px;
+}
+.githubimg{
+    height: 70px;
+}
+.imie{
+    height: 5vh;
+    margin: 0;
+    text-align: center;
+}
+.menu{
+    display: flex;
+    list-style-type: none;
+    position: absolute;
+    right: 30px;
+}
+.mlink a{
+    background-color: lightgray;
+    color: black;
+    text-decoration: none;
+    padding: 20px;
+    margin: 5px;
+}
+.mlink a:hover{
+    background-color: white;
+}
+
+.zarejestruj, .zarejestrujForm{
+    display: none;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    background-color: lightgoldenrodyellow;
+}
+
+.container{
+    width: 20vw;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+input, button{
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin: 2px;
+    border: none;
+}
