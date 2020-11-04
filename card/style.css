@@ -5,13 +5,37 @@
 }
 
 body{
+    margin: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-left: 10vw;
     margin-right: 10vw;
 }
+
+.header{
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: relative; */
+}
+.githublink{
+    position: absolute;
+    left: 30px;
+}
+.githubimg{
+    height: 70px;
+}
+.imie{
+    height: 5vh;
+    margin: 0;
+    text-align: center;
+}
+
 .container{
+    height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,6 +45,7 @@ body{
 .card{
     position: relative;
     overflow: hidden;
+    margin: 3vw;
 }
 
 .card:hover{
