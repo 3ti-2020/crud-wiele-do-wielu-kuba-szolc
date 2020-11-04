@@ -13,13 +13,16 @@
         <h1>Kuba Szolc gr.1 nr 13</h1>
         <ul class="menu">
             <li class="mlink">
-                <a href="crud/index.php">CRUD</a>
+                <a href="#">CRUD</a>
             </li>
             <li class="mlink">
                 <a href="card/index.html">KARTY</a>
             </li>
             <li class="mlink">
-                <a href="slider/index.php">SLIDER</a>
+                <a href="slider/index.html">SLIDER</a>
+            </li>
+            <li class="mlink">
+                <a href="logowanie/index.php">LOGOWANIE</a>
             </li>
         </ul>
     </header>
@@ -71,12 +74,21 @@
             </select>
             <input type="submit" value="dodaj">
         </form> -->
-        <form action="insert.php" method="post">
-            <input type="text" name="imie" placeholder="imie">
-            <input type="text" name="nazwisko" placeholder="nazwisko">
-            <input type="text" name="tytul" placeholder="tytul">
-            <input type="submit" value="dodaj">
-        </form>
+        <?php
+            session_start();
+            if(isset($_SESSION['zalogowano'])){
+                ?>
+                    <form action="insert.php" method="post">
+                        <input type="text" name="imie" placeholder="imie">
+                        <input type="text" name="nazwisko" placeholder="nazwisko">
+                        <input type="text" name="tytul" placeholder="tytul">
+                        <input type="submit" value="dodaj">
+                    </form>
+                <?php
+            }else{
+                echo("Tylko zalogowani użytkownicy mogą edytować bazę danych");
+            }
+        ?>
     </div>
     
 </body>
