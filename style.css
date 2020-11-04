@@ -3,12 +3,41 @@ body{
     padding: 0;
 }
 
-h1{
-    background-color: lightblue;
+.header{
+    background-color: lightgreen;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.githublink{
+    position: absolute;
+    left: 30px;
+}
+.githubimg{
+    height: 70px;
+}
+.imie{
     height: 5vh;
     margin: 0;
-    padding: 30px;
     text-align: center;
+}
+.menu{
+    display: flex;
+    list-style-type: none;
+    position: absolute;
+    right: 30px;
+}
+.mlink a{
+    background-color: lightgray;
+    color: black;
+    text-decoration: none;
+    padding: 20px;
+    margin: 5px;
+}
+.mlink a:hover{
+    background-color: white;
 }
 
 .tablecont{
@@ -16,7 +45,7 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightgreen;
+    background-color: wheat;
 }
 
 table,td{
