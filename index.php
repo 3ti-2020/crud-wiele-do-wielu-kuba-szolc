@@ -35,7 +35,21 @@
             $result = $conn->query("SELECT * FROM autorzy, books, tytuly WHERE books.id_autor = autorzy.id_autor AND books.id_tytul = tytuly.id_tytul");
 
             while($row=$result->fetch_assoc()){
-                echo("<tr><td>".$row['imie']."</td><td>".$row['nazwisko']."</td><td>".$row['tytul']."</td></tr>");
+                $html = <<<HTML
+                <tr>
+                    <td>$row[imie]</td>
+                    <td>$row[nazwisko]</td>
+                    <td>$row[tytul]</td>
+                    <td>
+                        <form action="delete.php" method="post">
+                            <input type="hidden" name="id" value="$row[id_book]">
+                            <input type="submit" value="Usuń">
+                        </form>
+                    </td>
+                </tr>
+
+HTML;
+            echo($html);
             }
         ?>
         </table>
