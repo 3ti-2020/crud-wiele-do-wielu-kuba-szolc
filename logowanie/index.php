@@ -21,7 +21,7 @@
                 <a href="../slider/index.html">SLIDER</a>
             </li>
             <li class="mlink">
-                <a href="#">LGOWANIE</a>
+                <a href="#">LOGOWANIE</a>
             </li>
         </ul>
     </header>
