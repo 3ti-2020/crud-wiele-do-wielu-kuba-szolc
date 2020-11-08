@@ -71,3 +71,11 @@ input, button{
     margin: 2px;
     border: none;
 }
+
+.oldAccount{
+    display: none;
+}
+
+button{
+    font-size: 0.9rem;
+}

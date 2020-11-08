@@ -37,14 +37,16 @@
                         <input class="zaloguj" type="submit" value="zaloguj">
                     </form>
                     <form action="rejestracja.php" method="post" class="zarejestrujForm">
-                        <input type="text" name="user" placeholder="nazwa uzytkownika">
-                        <input type="password" name="haslo" placeholder="haslo">
+                        <input type="text" name="user" placeholder="nowa nazwa uzytkownika">
+                        <input type="password" name="haslo" placeholder="nowe haslo">
                         <input class="zarejestruj" type="submit" value="utwórz nowe konto">
                     </form>
                     <button class="newAccount">nie masz konta?</button>
+                    <button class="oldAccount">wróć do logowania</button>
                 <?php
             }else{
-                ?>
+                echo("Witaj ".$_SESSION['user']."!")
+                ?>  
                     <form action="uwierzytelnianie.php" method="get">
                         <input type="hidden" name="akcja" value="wyloguj">
                         <input type="submit" value="wyloguj">
