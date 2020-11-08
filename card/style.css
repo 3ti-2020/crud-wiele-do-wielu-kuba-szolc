@@ -66,28 +66,29 @@ h1{
 }
 h3{
     margin-left: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     color: #aaaaaa;
     font-size: smaller;
     font-weight: 200;
 }
 
 .price{
-    display: flex;
-    align-items: flex-end;
-    margin: 20px;
+    /* display: flex; */
+    /* align-items: flex-end; */
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
-.h2price::first-letter{
+/* .h2price::first-letter{
     font-size: 0.9rem;
-}
+} */
 .h3price{
     margin: 0;
-    margin-left: 15px;
-    text-decoration: line-through;
+    /* margin-left: 15px;
+    text-decoration: line-through; */
 }
 
 .image{
-   width: 300px;
+   width: 250px;
    height: 350px;
    margin: 20px;
 }
