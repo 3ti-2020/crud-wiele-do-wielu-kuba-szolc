@@ -15,7 +15,7 @@
                 <a href="../index.php">CRUD</a>
             </li>
             <li class="mlink">
-                <a href="../card/index.html">KARTY</a>
+                <a href="../card/index.php">KARTY</a>
             </li>
             <li class="mlink">
                 <a href="../slider/index.html">SLIDER</a>
