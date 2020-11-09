@@ -73,18 +73,19 @@ h3{
 }
 
 .price{
-    /* display: flex; */
-    /* align-items: flex-end; */
+    display: flex;
+    align-items: flex-end;
     margin-left: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
 }
-/* .h2price::first-letter{
+.h2price::first-letter{
     font-size: 0.9rem;
-} */
+}
 .h3price{
     margin: 0;
-    /* margin-left: 15px;
-    text-decoration: line-through; */
+    margin-left: 15px;
+    text-decoration: line-through;
 }
 
 .image{
@@ -113,6 +114,9 @@ h3{
 }
 .buyBefore{
     display: none;
+    /* display: flex;
+    justify-content: center;
+    flex-wrap: wrap; */
 }
 .buyAfter, .selectColorAfter{
     position: absolute;
@@ -139,6 +143,7 @@ h3{
     border: none;
     padding: 20px;
     border-radius: 40px;
+    cursor: pointer;
 }
 
 .selectColorBefore{
@@ -186,4 +191,44 @@ p{
     margin-bottom: 2vh;
     font-size: xx-large;
     font-weight: 1000;
+}
+
+.wypozycz{
+    font-size: 1em;
+    color: white;
+    background-color: #e63c3c;
+    border: none;
+    padding: 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.wypImage{
+    width: 250px;
+    height: 350px;
+    margin: 20px;
+    margin-bottom: 10px;
+}
+
+.tablecont{
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: wheat;
+}
+
+table,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: lightgray;
+    padding: 10px;
 }

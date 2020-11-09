@@ -25,35 +25,31 @@
             <li class="mlink">
                 <a href="../logowanie/index.php">LOGOWANIE</a>
             </li>
+            <li class="mlink">
+                <a href="ksiazki.php">KSIĄŻKI</a>
+            </li>
         </ul>
     </header>
+
+    <?php
+        session_start();
+        if(!isset($_SESSION['zalogowano'])){
+            echo("<h1>zaloguj się aby wypożyczać książki</h1>");
+        }
+    ?>
     <div class="container">
-    
-    <?php
 
-        $conn = new mysqli("remotemysql.com", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
-        $result = $conn->query("SELECT * FROM autorzy, books, tytuly WHERE books.id_autor = autorzy.id_autor AND books.id_tytul = tytuly.id_tytul");
-        while($row = $result->fetch_assoc()){
-    ?>
-        <div class="card">
+    <div class="card">
             <div class="black"></div>
-
-    <?php
-            $html = <<<HTML
-                <h1>$row[tytul]</h1>
-                <h3>$row[imie] $row[nazwisko]</h3>
-                <img src=$row[img] alt="" class="image">
-                <div class="price"><h2 class="h2price">Nie posiadasz</h2><h3 class="h3price">Wypożyczalnia zadziała wkrótce</h3></div>
-HTML;
-            echo($html);
-    ?>
+                <h1>Fajna karta</h1>
+                <h3>Pozostałe mniej fajne</h3>
+                <img src="chair-red.jpg"  class="image">
             <div class="icons">
-                <!-- <img src="colors.png" class="colors" alt=""> -->
+                <img src="colors.png" class="colors" alt="">
                 <img src="cart.png" class="cart" alt="">
             </div>
             <div class="buyBefore">
-                <h4>Wypożycz</h4>
-               <input type="button" value="Dodaj do swoich książek" class="addToCart">
+               <input type="button" value="Kup krzesło" class="addToCart">
             </div>
             <div class="selectColorBefore">
                 <h4>Wybierz kolor</h4>
@@ -64,8 +60,42 @@ HTML;
                 <input type="button" value="" class="color colorGre">
                     <i class="fa3 fa-check"></i>
             </div>
+
+            <div class="price"><h2 class="h2price">$149.99</h2> <h3 class="h3price">199.99</h3></div>
         </div>
-        <?php
+
+
+    
+    <?php
+
+        $conn = new mysqli("remotemysql.com", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
+        $result = $conn->query("SELECT * FROM autorzy, books, tytuly WHERE books.id_autor = autorzy.id_autor AND books.id_tytul = tytuly.id_tytul");
+        while($row = $result->fetch_assoc()){
+    ?>
+        <div class="card">
+
+    <?php
+            $html = <<<HTML
+                <h1>$row[tytul]</h1>
+                <h3>$row[imie] $row[nazwisko]</h3>
+                <img src=$row[img] alt="" class="wypImage">
+HTML;
+            echo($html);
+    ?>
+    <?php
+            if(isset($_SESSION['zalogowano'])){
+            $html = <<<HTML
+                <form action="wypozyczenie.php" method="post">
+                    <input type="hidden" name="wypBook" value=$row[id_book]>
+                    <input type="submit" value="Wypożycz" class="wypozycz">
+                </form>
+
+HTML;
+            echo($html);
+            }
+    ?>
+        </div>
+    <?php
         }
     ?>
 
