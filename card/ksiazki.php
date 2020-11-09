@@ -29,14 +29,18 @@
             </li>
         </ul>
     </header>
+    <div class="info">
+    <?php
+    session_start();
+            if(!isset($_SESSION['zalogowano'])){
+                echo("<h2>Tutaj możesz zarządzać swoimi wypożyczonymi książkami</h2>");
+                echo("<p>Zaloguj się i wypożycz książkę</p>");
+            }
+    ?>
+    </div>
     <div class="tablecont">
         <table>
         <?php
-            session_start();
-            if(!isset($_SESSION['zalogowano'])){
-                echo("<h2>Tutaj możesz zarządzać swoimi wypożyczonymi książkami</h2><br>");
-                echo("<p>Zaloguj się i wypożycz książkę</p>");
-            }
             // $conn = new mysqli("localhost", "root", "zaq1@WSX", "library");
             $conn = new mysqli("remotemysql.com", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
 
