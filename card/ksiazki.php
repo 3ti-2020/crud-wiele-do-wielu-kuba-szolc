@@ -13,16 +13,16 @@
         <h1>Kuba Szolc gr.1 nr 13</h1>
         <ul class="menu">
             <li class="mlink">
-                <a href="#">CRUD</a>
+                <a href="../index.php">CRUD</a>
             </li>
             <li class="mlink">
                 <a href="index.php">KARTY</a>
             </li>
             <li class="mlink">
-                <a href="slider/index.html">SLIDER</a>
+                <a href="../slider/index.html">SLIDER</a>
             </li>
             <li class="mlink">
-                <a href="logowanie/index.php">LOGOWANIE</a>
+                <a href="../logowanie/index.php">LOGOWANIE</a>
             </li>
             <li class="mlink">
                 <a href="#">KSIĄŻKI</a>
@@ -33,6 +33,10 @@
         <table>
         <?php
             session_start();
+            if(!isset($_SESSION['zalogowano'])){
+                echo("<h1>Tutaj możesz zarządzać swoimi wypożyczonymi książkami</h1>");
+                echo("<h2>Zaloguj się i wypożycz książkę</h2>");
+            }
             // $conn = new mysqli("localhost", "root", "zaq1@WSX", "library");
             $conn = new mysqli("remotemysql.com", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
 
@@ -52,7 +56,7 @@
                     </td>
 HTML;
                 echo($html);
-                }
+            }
             echo("</tr>");
             ?>
         </table>
