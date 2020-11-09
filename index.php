@@ -16,13 +16,16 @@
                 <a href="#">CRUD</a>
             </li>
             <li class="mlink">
-                <a href="card/index.html">KARTY</a>
+                <a href="card/index.php">KARTY</a>
             </li>
             <li class="mlink">
                 <a href="slider/index.html">SLIDER</a>
             </li>
             <li class="mlink">
                 <a href="logowanie/index.php">LOGOWANIE</a>
+            </li>
+            <li class="mlink">
+                <a href="card/ksiazki.php">KSIĄŻKI</a>
             </li>
         </ul>
     </header>
