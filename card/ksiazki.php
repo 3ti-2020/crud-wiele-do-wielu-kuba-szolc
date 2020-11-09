@@ -29,16 +29,16 @@
             </li>
         </ul>
     </header>
-    <div class="info">
-    <?php
-    session_start();
-            if(!isset($_SESSION['zalogowano'])){
-                echo("<h2>Tutaj możesz zarządzać swoimi wypożyczonymi książkami</h2>");
-                echo("<p>Zaloguj się i wypożycz książkę</p>");
-            }
-    ?>
-    </div>
     <div class="tablecont">
+        <div class="info">
+        <?php
+            session_start();
+                if(!isset($_SESSION['zalogowano'])){
+                    echo("<h2>Tutaj możesz zarządzać swoimi wypożyczonymi książkami</h2>");
+                    echo("<p>Zaloguj się i wypożycz książkę</p>");
+            }
+        ?>
+        </div>
         <table>
         <?php
             // $conn = new mysqli("localhost", "root", "zaq1@WSX", "library");
