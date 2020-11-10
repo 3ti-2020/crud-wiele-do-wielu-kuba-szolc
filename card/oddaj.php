@@ -3,9 +3,10 @@
         $conn = new mysqli("remotemysql.com", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
 
         $del_id = $_POST['id'];
-        $usun = "DELETE FROM wypozyczenia WHERE id_wyp = '$del_id'";
+        $date = date("Y-m-d",time());
+        $oddaj = "UPDATE wypozyczenia SET zwrot = '$date' WHERE id_wyp = '$del_id' ";
 
-        mysqli_query($conn, $usun);
+        mysqli_query($conn, $oddaj);
     
         header('Location: ksiazki.php');
 ?>

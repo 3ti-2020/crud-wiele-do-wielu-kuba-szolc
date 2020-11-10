@@ -29,16 +29,16 @@
             </li>
         </ul>
     </header>
-    <div class="tablecont">
-        <div class="info">
-        <?php
-            session_start();
-                if(!isset($_SESSION['zalogowano'])){
-                    echo("<h2>Tutaj możesz zarządzać swoimi wypożyczonymi książkami</h2>");
-                    echo("<p>Zaloguj się i wypożycz książkę</p>");
+    <div class="info">
+    <?php
+    session_start();
+            if(!isset($_SESSION['zalogowano'])){
+                echo("<h2>Tutaj możesz zarządzać swoimi wypożyczonymi książkami</h2>");
+                echo("<p>Zaloguj się i wypożycz książkę</p>");
             }
-        ?>
-        </div>
+    ?>
+    </div>
+    <div class="tablecont">
         <table>
         <?php
             // $conn = new mysqli("localhost", "root", "zaq1@WSX", "library");
@@ -49,17 +49,20 @@
             $result = $conn->query($sql);
 
             while($row=$result->fetch_assoc()){
+                if($row['zwrot'] == NULL){
+
                 echo("<tr><td>".$row['tytul']."</td><td>".$row['imie']." ".$row['nazwisko']."</td>");
                 
-                $html = <<<HTML
-                    <td>
-                        <form action="oddaj.php" method="post">
-                            <input type="hidden" name="id" value="$row[id_wyp]">
-                            <input type="submit" value="Oddaj">
-                        </form>
-                    </td>
+                    $html = <<<HTML
+                        <td>
+                           <form action="oddaj.php" method="post">
+                                <input type="hidden" name="id" value="$row[id_wyp]">
+                                <input type="submit" value="Oddaj">
+                            </form>
+                        </td>
 HTML;
-                echo($html);
+                    echo($html);
+                }
             }
             echo("</tr>");
             ?>

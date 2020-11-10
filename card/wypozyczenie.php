@@ -4,8 +4,9 @@
     $book = $_POST['wypBook'];
     session_start();
     $user = $_SESSION['user'];
+    $date = date("Y-m-d",time());
 
-    $sql = "INSERT INTO `wypozyczenia`(`id_book`, `user`) VALUES ('$book', '$user')";
+    $sql = "INSERT INTO `wypozyczenia`(`id_book`, `user`, `wypozyczenie`, `zwrot`) VALUES ('$book', '$user', '$date', NULL)";
 
     mysqli_query($conn, $sql);
 
