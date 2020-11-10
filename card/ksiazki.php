@@ -42,30 +42,32 @@
         </div>
         <table>
         <?php
-            // $conn = new mysqli("localhost", "root", "zaq1@WSX", "library");
-            $conn = new mysqli("remotemysql.com", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
+            if(isset($_SESSION['zalogowano'])){
+                // $conn = new mysqli("localhost", "root", "zaq1@WSX", "library");
+                $conn = new mysqli("remotemysql.com", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
 
-            $user = $_SESSION['user'];
-            $sql = "SELECT * FROM wypozyczenia, books, tytuly, autorzy WHERE user = '$user' AND books.id_autor = autorzy.id_autor AND books.id_tytul = tytuly.id_tytul AND books.id_book = wypozyczenia.id_book";
-            $result = $conn->query($sql);
+                $user = $_SESSION['user'];
+                $sql = "SELECT * FROM wypozyczenia, books, tytuly, autorzy WHERE user = '$user' AND books.id_autor = autorzy.id_autor AND books.id_tytul = tytuly.id_tytul AND books.id_book = wypozyczenia.id_book";
+                $result = $conn->query($sql);
 
-            while($row=$result->fetch_assoc()){
-                if($row['zwrot'] == NULL){
+                while($row=$result->fetch_assoc()){
+                    if($row['zwrot'] == NULL){
 
-                echo("<tr><td>".$row['tytul']."</td><td>".$row['imie']." ".$row['nazwisko']."</td>");
-                
-                    $html = <<<HTML
-                        <td>
-                           <form action="oddaj.php" method="post">
-                                <input type="hidden" name="id" value="$row[id_wyp]">
-                                <input type="submit" value="Oddaj">
-                            </form>
-                        </td>
+                    echo("<tr><td>".$row['tytul']."</td><td>".$row['imie']." ".$row['nazwisko']."</td>");
+                    
+                        $html = <<<HTML
+                            <td>
+                            <form action="oddaj.php" method="post">
+                                    <input type="hidden" name="id" value="$row[id_wyp]">
+                                    <input type="submit" value="Oddaj">
+                                </form>
+                            </td>
 HTML;
-                    echo($html);
+                        echo($html);
+                    }
                 }
-            }
-            echo("</tr>");
+                echo("</tr>");
+                }
             ?>
         </table>
     </div>
