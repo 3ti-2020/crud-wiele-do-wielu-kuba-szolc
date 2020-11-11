@@ -186,11 +186,11 @@ i{
 
 p{
     width: 100%;
-    /* text-align: center; */
+    text-align: center;
     margin-top: 8vh;
     margin-bottom: 2vh;
-    /* font-size: xx-large;
-    font-weight: 1000; */
+    font-size: xx-large;
+    font-weight: 1000;
 }
 
 .wypozycz{
@@ -219,7 +219,7 @@ form{
 }
 
 .tablecont{
-    height: 85vh;
+    height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -231,4 +231,27 @@ table,td{
     border-collapse: collapse;
     background-color: lightgray;
     padding: 10px;
+}
+
+.forms{
+    background-color: lightgoldenrodyellow;
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form{
+    margin: 5px;
+}
+input{
+    padding: 5px;
+}
+.bibliotekarz_input{
+    margin: 5px;
+}
+
+.cont{
+    height: 85vh;
 }

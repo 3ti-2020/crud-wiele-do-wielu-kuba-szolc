@@ -68,9 +68,68 @@ HTML;
                 }
                 echo("</tr>");
                 }
+            if(isset($_SESSION['zalogowano']) && $_SESSION['user']=='b'){
+                ?>
+                    <table>
+                <?php
+                    // $conn = new mysqli("localhost", "root", "zaq1@WSX", "library");
+                    $conn = new mysqli("remotemysql.com", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
+
+                    $result = $conn->query("SELECT * FROM wypozyczenia JOIN books ON wypozyczenia.id_book = books.id_book JOIN autorzy ON books.id_autor = autorzy.id_autor JOIN tytuly ON books.id_tytul = tytuly.id_tytul");
+
+                    while($row=$result->fetch_assoc()){
+                        echo("<tr>
+                            <td>".$row['user']."</td>
+                            <td>".$row['nazwisko']."</td>
+                            <td>".$row['tytul']."</td>
+                            <td>".$row['wypozyczenie']."</td>");
+                        if($row['zwrot'] != NULL){
+                            echo("<td>".$row['zwrot']."</td>");
+                        }else{
+                            echo("<td>nie oddana</td>");
+                        } 
+                        $html = <<<HTML
+                            <td>
+                            <form action="oddaj.php" method="post">
+                                    <input type="hidden" name="id" value="$row[id_wyp]">
+                                    <input type="submit" value="Oddaj">
+                                </form>
+                            </td>
+HTML;
+                    echo($html);
+                    }
+                    echo("</tr>");
+                ?>
+
+                    </table>
+                </div>
+                <div class="forms">
+                    <form action="wypozyczenie_bibliotekarz.php" method="post">
+                        <select name="wyp_book" class="bibliotekarz_input">
+                            <?php
+                                $result_tytuly = $conn->query("SELECT * FROM books JOIN tytuly ON books.id_tytul = tytuly.id_tytul JOIN autorzy ON books.id_autor = autorzy.id_autor");
+                                while($row=$result_tytuly->fetch_assoc()){
+                                    echo("<option value=".$row['id_book'].">".$row['nazwisko']." ".$row['tytul']."</option>");
+                                }
+                            ?>
+                        </select>
+                        <select name="wyp_user" class="bibliotekarz_input">
+                            <?php
+                                $result_users = $conn->query("SELECT * FROM users");
+                                while($row=$result_users->fetch_assoc()){
+                                    echo("<option value=".$row['login'].">".$row['login']."</option>");
+                                }
+                            ?>
+                        </select>
+                        <input type="date" name="wyp_data_wyp" class="bibliotekarz_input">
+                        <input type="date" name="wyp_data_zwr" class="bibliotekarz_input">
+                        <input type="submit" value="zatwierdź" class="bibliotekarz_input">
+                    </form>
+                </div>
+                <?php
+            }
             ?>
         </table>
-    </div>
     
 </body>
 </html>
