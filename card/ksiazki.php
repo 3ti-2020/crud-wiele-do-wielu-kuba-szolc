@@ -43,6 +43,7 @@
         <?php
             if(isset($_SESSION['zalogowano']) && $_SESSION['user']=='b'){
                 ?>
+                    <div class="tabdiv">
                     <table>
                 <?php
                     // $conn = new mysqli("localhost", "root", "zaq1@WSX", "library");
@@ -81,6 +82,7 @@ HTML;
                 ?>
 
                     </table>
+                    </div>
                 </div>
                 <div class="forms">
                     <form action="wypozyczenie_bibliotekarz.php" method="post">
