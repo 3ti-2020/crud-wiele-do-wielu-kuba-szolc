@@ -30,6 +30,8 @@
     </header>
     <div class="main">
         <div class="container">
+            <p>Konto bibliotekarza:</p>
+            <p>user: b | haslo: b</p>
             <?php
             session_start();
             if(!isset($_SESSION['zalogowano'])){
