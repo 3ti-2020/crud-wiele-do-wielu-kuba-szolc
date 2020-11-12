@@ -90,9 +90,15 @@ HTML;
                         } 
                         $html = <<<HTML
                             <td>
-                            <form action="oddaj.php" method="post">
+                                <form action="oddaj.php" method="post">
                                     <input type="hidden" name="id" value="$row[id_wyp]">
                                     <input type="submit" value="Oddaj">
+                                </form>
+                            </td>
+                            <td>
+                                <form action="usun.php" method="post">
+                                    <input type="hidden" name="id" value="$row[id_wyp]">
+                                    <input type="submit" value="Usuń">
                                 </form>
                             </td>
 HTML;
