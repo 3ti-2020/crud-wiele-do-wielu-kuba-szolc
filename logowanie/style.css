@@ -79,3 +79,7 @@ input, button{
 button{
     font-size: 0.9rem;
 }
+
+p{
+    margin: 5px
+}
