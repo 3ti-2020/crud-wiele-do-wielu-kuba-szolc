@@ -7,7 +7,7 @@
     $data_zwr = $_POST['wyp_data_zwr'];
     echo($book.$user.$data_wyp.$data_zwr);
 
-    $sql = "INSERT INTO `wypozyczenia`(`id_wyp`, `id_book`, `user`, `wypozyczenie`, `zwrot`) VALUES (NULL, '$book', '$user', '$data_wyp', '$data_zwr')";
+    $sql = "INSERT INTO `wypozyczenia`(`id_wyp`, `id_book`, `user`, `wypozyczenie`, `zwrot`) VALUES (NULL, '$book', '$user', '$data_wyp', NULL)";
 
     mysqli_query($conn, $sql);
 

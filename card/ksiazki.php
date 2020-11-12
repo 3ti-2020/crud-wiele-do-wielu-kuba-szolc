@@ -122,7 +122,6 @@ HTML;
                             ?>
                         </select>
                         <input type="date" name="wyp_data_wyp" class="bibliotekarz_input">
-                        <input type="date" name="wyp_data_zwr" class="bibliotekarz_input">
                         <input type="submit" value="zatwierdź" class="bibliotekarz_input">
                     </form>
                 </div>
