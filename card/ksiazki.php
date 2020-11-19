@@ -60,7 +60,13 @@
                         if($row['zwrot'] != NULL){
                             echo("<td>".$row['zwrot']."</td>");
                         }else{
-                            echo("<td>nie oddana</td>");
+                            // echo(date_diff( date_create(date("Y-m-d",time())), date_create($row['wypozyczenie'])) -> format('%a'));
+                            if(date_diff( date_create(date("Y-m-d",time())), date_create($row['wypozyczenie'])) -> format('%a') > 2){
+                                echo("<td class='red'>po terminie</td>");
+                            }else{
+                                echo("<td>nie oddana</td>");
+                            }
+                            
                         } 
                         $html = <<<HTML
                             <td>

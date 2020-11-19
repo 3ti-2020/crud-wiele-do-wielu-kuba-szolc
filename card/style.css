@@ -265,3 +265,6 @@ input{
 .cont{
     height: 85vh;
 }
+.red{
+    background-color: lightcoral;
+}
