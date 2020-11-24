@@ -30,6 +30,7 @@
         </ul>
     </header>
     <div class="tablecont">
+        <h2>Tutaj można tylko usuwać ksiązki z bazy (proszę tego nie robić). <br> Po więcej wrażeń zapraszam do zakładki "Książki".</h2>
         <table>
         <?php
             session_start();
@@ -54,28 +55,6 @@ HTML;
                 }
             echo("</tr>");
             }
-        ?>
-        </table>
-        <table>
-        <?php
-            // $conn = new mysqli("localhost", "root", "zaq1@WSX", "library");
-            $conn = new mysqli("remotemysql.com", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
-
-            $result = $conn->query("SELECT * FROM wypozyczenia JOIN books ON wypozyczenia.id_book = books.id_book JOIN autorzy ON books.id_autor = autorzy.id_autor JOIN tytuly ON books.id_tytul = tytuly.id_tytul");
-
-            while($row=$result->fetch_assoc()){
-                echo("<tr>
-                        <td>".$row['user']."</td>
-                        <td>".$row['nazwisko']."</td>
-                        <td>".$row['tytul']."</td>
-                        <td>".$row['wypozyczenie']."</td>");
-                if($row['zwrot'] != NULL){
-                    echo("<td>".$row['zwrot']."</td>");
-                }else{
-                    echo("<td>nie oddana</td>");
-                } 
-            }
-            echo("</tr>");
         ?>
         </table>
     </div>
