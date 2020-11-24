@@ -57,28 +57,26 @@
                             <td>".$row['nazwisko']."</td>
                             <td>".$row['tytul']."</td>
                             <td>".$row['wypozyczenie']."</td>");
-                        if($row['zwrot'] != NULL){
-                            echo("<td>".$row['zwrot']."</td>");
-                        }else{
-                            // echo(date_diff( date_create(date("Y-m-d",time())), date_create($row['wypozyczenie'])) -> format('%a'));
-                            if(date_diff( date_create(date("Y-m-d",time())), date_create($row['wypozyczenie'])) -> format('%a') > 2){
-                                echo("<td class='red'>po terminie</td>");
+                        // if($row['zwrot'] != NULL){
+                        //     echo("<td>".$row['zwrot']."</td>");
+                        // }else{
+                            if(date_create(date("Y-m-d",time())) > date_create($row['zwrot'])){
+                                echo("<td class='red'>".$row['zwrot']."</td>");
                             }else{
-                                echo("<td>nie oddana</td>");
+                                echo("<td>".$row['zwrot']."</td>");
                             }
-                            
-                        } 
+                        // }   
                         $html = <<<HTML
-                            <td>
+                            <!-- <td>
                                 <form action="oddaj.php" method="post">
                                     <input type="hidden" name="id" value="$row[id_wyp]">
                                     <input type="submit" value="Oddaj">
                                 </form>
-                            </td>
+                            </td> -->
                             <td>
                                 <form action="usun.php" method="post">
                                     <input type="hidden" name="id" value="$row[id_wyp]">
-                                    <input type="submit" value="Usuń">
+                                    <input type="submit" value="Oddaj">
                                 </form>
                             </td>
 HTML;
@@ -87,6 +85,15 @@ HTML;
                     echo("</tr>");
                 ?>
 
+                    </table>
+                    <table>
+                <?php
+                    $result = $conn->query("SELECT * FROM autorzy, books, tytuly WHERE books.id_autor = autorzy.id_autor AND books.id_tytul = tytuly.id_tytul");
+
+                    while($row=$result->fetch_assoc()){
+                        echo("<tr><td>".$row['tytul']."</td><td>".$row['ilosc']."</td>");
+                    }
+                ?>
                     </table>
                     </div>
                 </div>
@@ -116,6 +123,7 @@ HTML;
             }else{
             ?>
         </table>
+
         <table>
         <?php
             if(isset($_SESSION['zalogowano'])){
