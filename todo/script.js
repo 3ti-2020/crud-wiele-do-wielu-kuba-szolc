@@ -37,6 +37,10 @@ function addTask(text) {
     del.addEventListener("click", e => {
         e.target.parentElement.remove();
     });
+
+    element.appendChild(del);
+
+    list.appendChild(element);
     
     console.log("Działa");
 }
