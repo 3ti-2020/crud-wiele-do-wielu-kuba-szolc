@@ -15,8 +15,6 @@ todoForm.addEventListener("submit", e => {
 
 function addTask(text) {
 
-
-
     const element = document.createElement("div");
     element.classList.add("element");
 
@@ -31,12 +29,20 @@ function addTask(text) {
 
     //i wrzucam element do listy
     todoList.append(element);
+
+    //delete
+    const del = document.createElement("button");
+    del.innerText = "Usuń";
+    del.classList.add("delete");
+    del.addEventListener("click", e => {
+        e.target.parentElement.remove();
+    });
     
     console.log("Działa");
 }
 
-todoList.addEventListener("click", e => {
-    if (e.target.classList.contains("element-delete")) {
-        e.target.closest(".element").remove();
-    }
-});
+// todoList.addEventListener("click", e => {
+//     if (e.target.classList.contains("element-delete")) {
+//         e.target.closest(".element").remove();
+//     }
+// });
