@@ -2,21 +2,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
     <div class="content">
         <form class="form">
             <label>Podaj zadanie</label>
-            <textarea id="text-area" class="text-area" ></textarea>
-            <input type="submit" value="Dodaj">
+            <div class="input-area">
+                <textarea id="text-area" class="text-area" placeholder="tu wpisz"></textarea>
+                <input type="submit" value="Dodaj">
+            </div>
         </form>
-    </div>
-    <div class="list">
-        <template class="task-cont">
-            <div class="task-text"></div>
-        </template>
+        <div class="list">
+            <template class="task-cont">
+                <div class="task-text"></div>
+            </template>
+        </div>
     </div>
 
 
