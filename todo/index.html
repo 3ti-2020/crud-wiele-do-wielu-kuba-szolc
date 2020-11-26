@@ -5,48 +5,21 @@
     <title>Document</title>
 </head>
 <body>
+    
     <div class="content">
-
-        <form class="form" id="todoForm">
-            <div class="form-row">
-                <label class="form-label" for="todoMessage">Podaj treść zadania todo</label>
-                <textarea class="form-message" name="todoMessage" id="todoMessage"></textarea>
-            </div>
-            <div class="form-row">
-                <button type="submit" class="button form-button">Dodaj zadanie</button>
-            </div>
+        <form class="form">
+            <label>Podaj zadanie</label>
+            <textarea id="text-area" class="text-area" ></textarea>
+            <input type="submit" value="Dodaj">
         </form>
-
-        <section class="list-cnt">
-            
-            <div class="list" id="todoList">
-                <div class="element" >
-                    <!-- <div class="element-bar">
-                    
-
-                    </div>
-                <div class="element-text">zadanie</div>
-                <button class="element-delete" title="Usuń task">
-                    Usuń
-                </button> -->
-                </div>
-            </div>
-
-        </section>
+    </div>
+    <div class="list">
+        <template class="task-cont">
+            <div class="task-text"></div>
+        </template>
     </div>
 
-    <template id="elementTemplate">
-        <div class="element-bar">
-            <!-- <button class="element-delete" title="Usuń task">
-            Usuń
-            </button> -->
-        </div>
-        <div class="element-text">
 
-        </div>
-    </template>
-
-    
 </body>
     <script src="script.js"></script>
 </html>

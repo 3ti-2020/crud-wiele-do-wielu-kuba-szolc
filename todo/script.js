@@ -1,52 +1,37 @@
-const todoList = document.querySelector("#todoList");
-const todoForm = document.querySelector("#todoForm");
-const todoSearch = document.querySelector("#todoSearch");
-const todoTextarea = todoForm.querySelector('textarea');
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector(".form");
+    const textarea = document.querySelector(".text-area");
+    const list = document.querySelector(".list");
 
-todoForm.addEventListener("submit", e => {
-    e.preventDefault();
+    function addTask(text) {
+        console.log(text);
 
-    if (todoTextarea.value !== "") 
-    {
-        addTask(todoTextarea.value);
-        todoTextarea.value = "";
+        const task = document.createElement("div");
+        task.classList.add("task");
+
+        const del = document.createElement("button");
+        del.classList.add("del");
+        del.innerText = "Usuń";
+        del.addEventListener("click", () => {
+            task.remove();
+        });
+
+        const taskInner = document.querySelector(".task-cont").content.cloneNode(true);
+
+        task.append(taskInner);
+        task.append(del);
+
+        task.querySelector(".task-text").innerText = text;
+
+        list.append(task);
     }
-});
 
-function addTask(text) {
+    form.addEventListener("submit", hmm => {
+        hmm.preventDefault();
 
-    const element = document.createElement("div");
-    element.classList.add("element");
-
-    //pobieram zawartość templatki
-    const elementInner = document.querySelector("#elementTemplate").content.cloneNode(true);
-
-    //wrzucam do elementu
-    element.append(elementInner);
-
-    //wstawiam tekst
-    element.querySelector(".element-text").innerText = text;
-
-    //i wrzucam element do listy
-    todoList.append(element);
-
-    //delete
-    const del = document.createElement("button");
-    del.innerText = "Usuń";
-    del.classList.add("delete");
-    del.addEventListener("click", e => {
-        e.target.parentElement.remove();
+        if(textarea.value !== ""){
+            addTask(textarea.value);
+            textarea.value = "";
+        }
     });
-
-    element.appendChild(del);
-
-    list.appendChild(element);
-    
-    console.log("Działa");
-}
-
-// todoList.addEventListener("click", e => {
-//     if (e.target.classList.contains("element-delete")) {
-//         e.target.closest(".element").remove();
-//     }
-// });
+});
