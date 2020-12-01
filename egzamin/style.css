@@ -1,0 +1,29 @@
+*{
+    color: #dddddd;
+    font-family: sans-serif;
+}
+body{
+    background-color: #333333;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pytanie{
+    margin-top: 100px;
+    width: 51%;
+}
+
+.dobre{
+    background-color: darkgreen;
+}
+td{
+    padding: 10px;
+    background-color: #282828;
+}
+table,tr,td{
+    width: 100%;
+}
+table{
+    margin: 20px 0px 20px 0px;
+}
