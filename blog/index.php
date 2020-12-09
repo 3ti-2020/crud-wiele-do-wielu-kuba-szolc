@@ -6,10 +6,6 @@
     <title>Blog</title>
 </head>
 <body>
-    <header class="header">
-        <div class="logo"></div>
-        <ul class="menu"></ul>
-    </header>
     <main class="main">
         <?php
             $conn = new mysqli("remotemysql.com", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
