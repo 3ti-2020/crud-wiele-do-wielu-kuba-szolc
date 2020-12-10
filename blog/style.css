@@ -6,8 +6,7 @@ body{
     margin: 0;
 }
 .header{
-    width: 100%;
-    background-color: lightgray;
+    background-color: whitesmoke;
     padding: 20px 70px 20px 70px;
     display: flex;
     justify-content: space-between;
@@ -26,8 +25,24 @@ body{
     margin: 0;
 }
 
+.backimg{
+    height: 400px;
+    background-image: url("back.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content{
+    margin: 0px 20% 0px 20%;
+    background-color: whitesmoke;
+    position: relative;
+    top: -100px;
+    padding: 1px 30px 1px 30px;
+}
+
 .main{
-    padding: 50px 20% 0px 20%;
+    background-color: white;
 }
 
 .tagi{

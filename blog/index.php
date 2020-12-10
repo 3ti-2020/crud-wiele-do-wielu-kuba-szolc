@@ -15,6 +15,8 @@
         </div>
     </header>
     <main class="main">
+        <div class="backimg"></div>
+        <div class="content">
         <?php
             $conn = new mysqli("remotemysql.com", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
             $articles = $conn->query("SELECT * FROM blog_posty");
@@ -39,6 +41,7 @@
             <?php
             }
         ?>
+        </div>
     </main>
 </body>
 </html>
