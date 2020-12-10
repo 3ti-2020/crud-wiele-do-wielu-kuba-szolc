@@ -1,0 +1,36 @@
+*{
+    font-family: sans-serif;
+}
+
+body{
+    margin: 0;
+}
+.header{
+    width: 100%;
+    background-color: lightgray;
+    padding: 20px 70px 20px 70px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: lightgray 0px 0px 20px ;
+}
+
+.logo{
+    display: flex;
+    font-size: 45px;
+}
+
+.logo img{
+    height: 100px;
+}
+.logo h1{
+    margin: 0;
+}
+
+.main{
+    padding: 50px 20% 0px 20%;
+}
+
+.tagi{
+    font-size: 1rem;
+    color: #555555;
+}
