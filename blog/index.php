@@ -19,7 +19,15 @@
             <button class="dodaj btn">Dodaj post</button>
             <form action="index.php" method="get">
                 <input type="text" name="tag_search" placeholder="szukaj tagu" class="search-input">
-                <button type="submit" value="Szukaj" class="btn"><i class="fa fa-search"></i></button>
+                <button type="submit" value="Szukaj" class="btn">
+                    <?php
+                        if(!isset($_GET['tag_search'])){
+                            echo("<i class='fa fa-search'>");
+                        }else{
+                            echo("<i class='fa fa-times'></i>");
+                        }
+                    ?>
+                </i></button>
             </form>
         </div>
     </header>
@@ -35,7 +43,7 @@
                     $conn = new mysqli("remotemysql.com", "1Ed39FMiyQ", "ZMFu5eO2lq", "1Ed39FMiyQ");
                     $tags_check = $conn->query("SELECT * FROM blog_tagi");
                     while($row_tags_check = $tags_check->fetch_assoc()){
-                        echo("<input type='checkbox' name='tags[]' value=".$row_tags_check['id_tag'].">#".$row_tags_check['nazwa'] );
+                        echo("<div><input type='checkbox' name='tags[]' value=".$row_tags_check['id_tag'].">#".$row_tags_check['nazwa']."</div>" );
                     }
                 ?>
                 </div>
@@ -47,10 +55,14 @@
         <div class="content">
         <?php
             if( isset($_GET['tag_search']) ){
-                $tag_search = $_GET['tag_search'];
-                $tag_id = $conn->query("SELECT * FROM blog_tagi WHERE nazwa = '$tag_search'");
-                $tag_id = $tag_id->fetch_assoc();
-                $tag_id = $tag_id['id_tag'];
+                if($_GET['tag_search'] == ""){
+                    header('Location: index.php');
+                }else{
+                    $tag_search = $_GET['tag_search'];
+                    $tag_id = $conn->query("SELECT * FROM blog_tagi WHERE nazwa = '$tag_search'");
+                    $tag_id = $tag_id->fetch_assoc();
+                    $tag_id = $tag_id['id_tag'];
+                }
             }
             if(isset($tag_id)){
                 $articles = $conn->query("SELECT * FROM blog_posty JOIN blog_posty_tagi USING(id_post) WHERE id_tag = '$tag_id'");
