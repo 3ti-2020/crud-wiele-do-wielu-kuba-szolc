@@ -10,7 +10,8 @@ body{
     padding: 20px 70px 20px 70px;
     display: flex;
     justify-content: space-between;
-    box-shadow: lightgray 0px 0px 20px ;
+    align-items: center;
+    box-shadow: lightgray 0px 0px 20px;
 }
 
 .logo{
@@ -23,6 +24,18 @@ body{
 }
 .logo h1{
     margin: 0;
+}
+
+.buttons{
+    display: flex;
+}
+
+.search-input{
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 2px;
+    width: 100px;
 }
 
 .backimg{
@@ -48,4 +61,78 @@ body{
 .tagi{
     font-size: 1rem;
     color: #555555;
+}
+
+.inputy-cont{
+    display: none;
+}
+.inputy-content-dodawanie{
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    background-color: #464644;
+    opacity: 0.95;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputy-content-dodawanie form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputy-content-dodawanie h2{
+    color: white;
+}
+
+.tags-check{
+    background-color: white;
+    width: 300px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.intxt{
+    width: 300px;
+    padding: 10px;
+    font-size: 1rem;
+    margin: 3px;
+    border: 1px solid black;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+.artykul{
+    border-bottom: 1px solid #aaaaaa;
+    margin-bottom: 70px;
+}
+
+.btn{
+    padding: 15px;
+    font-size: 1rem;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+.btn:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+b{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.buttons form{
+    margin-left: 5px;
 }
