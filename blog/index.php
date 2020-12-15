@@ -77,7 +77,7 @@
                     <?php
                     $tags = $conn->query("SELECT * FROM blog_tagi JOIN blog_posty_tagi USING(id_tag) WHERE blog_posty_tagi.id_post = ".$row_article['id_post']);
                     while($row_tag = $tags->fetch_assoc()){
-                        echo("#".$row_tag['nazwa']." ");
+                        echo("<a class='tagi' href='?tag_search=".$row_tag['nazwa']."'> #".$row_tag['nazwa']."</a>");
                     }
                     ?>
                     </h3>
