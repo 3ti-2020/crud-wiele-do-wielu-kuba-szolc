@@ -34,21 +34,28 @@ label{
     align-items: center;
     margin: 10px;
 }
-input, button{
+input{
+    background-color: white;
+}
+.submit-btn{
     padding: 10px;
     border: none;
     cursor: pointer;
     background-color: black;
     color: white;
     height: 40px;
-    border-radius: 3px;
+    border-radius: 0px 10px 10px 0px;
 }
-textarea{
-    font-size: 1rem;
-    height: 40px;
-    border: 1px solid lightgrey;
-    resize: none;
-    padding: 10px;
+.task-name{
+    border: 1px solid grey;
+    background-color: white;
+    height: 36px;
+    padding-left: 10px;
+    border-radius: 10px 0 0 10px;
+}
+
+.message{
+    margin: 0;
 }
 
 .list{
@@ -57,9 +64,11 @@ textarea{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 20px;
+    padding: 0;
 }
 
-.task{
+.tasks{
     font-size: 1.2rem;
     padding: 15px;
     padding-left: 30px;
@@ -71,4 +80,15 @@ textarea{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.del-btn{
+    background-color: grey;
+    color: white;
+    padding: 1px 3px 1px 3px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: right;
+    cursor: pointer;
+    border-radius: 5px;
 }
