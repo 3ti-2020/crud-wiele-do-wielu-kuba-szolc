@@ -37,21 +37,23 @@ label{
 input{
     background-color: white;
 }
-.submit-btn{
+.btn{
     padding: 10px;
     border: none;
     cursor: pointer;
     background-color: black;
     color: white;
     height: 40px;
-    border-radius: 0px 10px 10px 0px;
+}
+.submit-btn{
+    border-radius: 0 3px 3px 0;
 }
 .task-name{
     border: 1px solid grey;
     background-color: white;
     height: 36px;
     padding-left: 10px;
-    border-radius: 10px 0 0 10px;
+    border-radius: 3px 0 0 3px;
 }
 
 .message{
@@ -83,12 +85,5 @@ input{
 }
 
 .del-btn{
-    background-color: grey;
-    color: white;
-    padding: 1px 3px 1px 3px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    text-align: right;
-    cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
 }

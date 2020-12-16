@@ -15,7 +15,7 @@
             <label>Podaj zadanie</label>
             <div class="input-area">
                 <input type="text" name="task-name" id="task-name" class="task-name" placeholder="Co masz do zrobienia...">
-                <input type="submit" value="Dodaj" class="submit-btn">
+                <input type="submit" value="Dodaj" class="btn submit-btn">
             </div>
             <p class="message" id="message"></p>
         </form>
@@ -45,7 +45,7 @@
                     style='".$style."'>
                     ".$task['name']."
                     </a>
-                    <span class='del-btn' data-id='".$task['id']."'>X</span>");
+                    <button class='btn del-btn' data-id='".$task['id']."'>Usuń</button>");
                 echo("</li>");
             }
         ?>
