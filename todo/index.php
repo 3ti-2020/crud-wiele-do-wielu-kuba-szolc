@@ -11,11 +11,11 @@
 <body>
     
     <div class="content">
-        <form class="form" method="post" id='todo-form'>
+        <form class="form" method="post" id='todo_form'>
             <label>Podaj zadanie</label>
             <div class="input-area">
-                <input type="text" name="task-name" id="task-name" class="task-name" placeholder="Co masz do zrobienia...">
-                <input type="submit" value="Dodaj" class="btn submit-btn">
+                <input type="text" name="task_name" id="task_name" class="task-name" placeholder="Co masz do zrobienia...">
+                <input type="submit" value="Dodaj" class="btn submit-btn" id="submit" name="submit">
             </div>
             <p class="message" id="message"></p>
         </form>
