@@ -38,7 +38,7 @@
                     $style = 'text-decoration: line-through';
                 }
 
-                echo("<li class='tasks'>");
+                echo("<li class='tasks' id='".$task['id']."'>");
                     echo("<a 
                     class='task task-".$task['id']."'
                     id='task-".$task['id']."'
